@@ -1,0 +1,1 @@
+Game_Actor.prototype.basicFloorDamage = function() { return 20; };
