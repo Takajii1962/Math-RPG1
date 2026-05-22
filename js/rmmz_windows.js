@@ -2231,33 +2231,12 @@ Window_ItemList.prototype.isEnabled = function(item) {
 };
 
 Window_ItemList.prototype.makeItemList = function() {
-    // まず袋の中にあるアイテムを普通にリストに入れます
     this._data = $gameParty.allItems().filter(item => this.includes(item));
-    
-    // 【安全に復活】誰かが装備している武器・防具も、リストに強制追加します
-    if (this._category === "weapon" || this._category === "armor") {
-        const members = $gameParty.members() || [];
-        for (let i = 0; i < members.length; i++) {
-            const actor = members[i];
-            if (actor) {
-                const equips = actor.equips() || [];
-                for (let j = 0; j < equips.length; j++) {
-                    const equip = equips[j];
-                    if (equip && this.includes(equip)) {
-                        // まだリストに載っていないアイテム（袋に0個のもの）だけを安全に追加
-                        if (!this._data.some(item => item && item.id === equip.id)) {
-                            this._data.push(equip);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
     if (this.includes(null)) {
         this._data.push(null);
     }
 };
+
 Window_ItemList.prototype.selectLast = function() {
     const index = this._data.indexOf($gameParty.lastItem());
     this.forceSelect(index >= 0 ? index : 0);
@@ -2280,30 +2259,9 @@ Window_ItemList.prototype.numberWidth = function() {
 };
 
 Window_ItemList.prototype.drawItemNumber = function(item, x, y, width) {
-    if (this.needsNumber() && item) {
-        // 袋の中の数を取得
-        let count = $gameParty.numItems(item);
-        
-        // 武器・防具なら、装備中の数もそこに純粋にプラスする
-        if (DataManager.isWeapon(item) || DataManager.isArmor(item)) {
-            const members = $gameParty.members() || [];
-            for (let i = 0; i < members.length; i++) {
-                const actor = members[i];
-                if (actor) {
-                    const equips = actor.equips() || [];
-                    for (let j = 0; j < equips.length; j++) {
-                        const equip = equips[j];
-                        if (equip && equip.id === item.id) {
-                            count++;
-                        }
-                    }
-                }
-            }
-        }
-
-        // 画面に「: 数字」を表示する（消えていた表示を確実に復活させます）
-        this.drawText(":", x, y, width - this.textWidth(count) - this.textWidth(":"), "right");
-        this.drawText(count, x, y, width, "right");
+    if (this.needsNumber()) {
+        this.drawText(":", x, y, width - this.textWidth("00"), "right");
+        this.drawText($gameParty.numItems(item), x, y, width, "right");
     }
 };
 
@@ -2966,7 +2924,7 @@ Window_StatusParams.prototype.itemHeight = function() {
 Window_StatusParams.prototype.drawItem = function(index) {
     const rect = this.itemLineRect(index);
     const paramId = index + 2;
-    if (paramId === 4 || paramId === 5 || paramId === 6|| paramId === 7 ) return;const name = TextManager.param(paramId);
+    const name = TextManager.param(paramId);
     const value = this._actor.param(paramId);
     this.changeTextColor(ColorManager.systemColor());
     this.drawText(name, rect.x, rect.y, 160);
@@ -3774,7 +3732,6 @@ Window_ShopStatus.prototype.drawActorParamChange = function(
 ) {
     const width = this.innerWidth - this.itemPadding() - x;
     const paramId = this.paramId();
-    if (paramId !== 2 && paramId !== 3) return;
     const change =
         this._item.params[paramId] - (item1 ? item1.params[paramId] : 0);
     this.changeTextColor(ColorManager.paramchangeTextColor(change));
