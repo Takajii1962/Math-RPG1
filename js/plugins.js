@@ -17,5 +17,6 @@ var $plugins =
 {"name":"MPP_EquipStatusEX_Op1","status":true,"description":"拡張表示をショップのステータスにも反映させます。","parameters":{"-----Status":"","Weapon Fixed Status":"2","Armor Fixed Status":"3","Included Status":"2-7","Changed Status":"0-7,10-19,20-29","-----Trait":"","Element Rate Type":"Included or Changed","Debuff Rate Type":"Included or Changed","State Rate Type":"Included or Changed","State Resist Type":"Changed","Original Trait Type":"Changed","-----Shop Window":"","Members Size":"4","Show Actor Name?":"true","Show Character?":"false","Draw Current Item?":"false","Equipping Position":"right of name","Equipping Text":"Ｅ","Equipping Font Size":"24"}},
 {"name":"ShopEquipCount","status":true,"description":"ショップ画面の所持数表示に、メンバーが装備中の数も含めるプラグインです。","parameters":{}},
 {"name":"FixVehicleSpeed","status":true,"description":"大型船の速度を完全に固定し、乗り降り時の速度リセットを防ぎます","parameters":{}},
-{"name":"TextPicture","status":true,"description":"テキストをピクチャとして表示します。","parameters":{}}
+{"name":"TextPicture","status":true,"description":"テキストをピクチャとして表示します。","parameters":{}},
+{"name":"OnlyAtkDef","status":true,"description":"ステータス画面の能力値を攻撃力と防御力のみにします","parameters":{}}
 ];
