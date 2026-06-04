@@ -18,5 +18,7 @@ var $plugins =
 {"name":"ShopEquipCount","status":true,"description":"ショップ画面の所持数表示に、メンバーが装備中の数も含めるプラグインです。","parameters":{}},
 {"name":"FixVehicleSpeed","status":true,"description":"大型船の速度を完全に固定し、乗り降り時の速度リセットを防ぎます","parameters":{}},
 {"name":"TextPicture","status":true,"description":"テキストをピクチャとして表示します。","parameters":{}},
-{"name":"OnlyAtkDef","status":true,"description":"ステータス画面の能力値を攻撃力と防御力のみにします","parameters":{}}
+{"name":"OnlyAtkDef","status":true,"description":"ステータス画面の能力値を攻撃力と防御力のみにします","parameters":{}},
+{"name":"FixOnlyItem","status":false,"description":"アイテム画面で武器・防具・大事なものの選択を消し、アイテムのみにします。","parameters":{}},
+{"name":"SceneCustomizer","status":false,"description":"シーンカスタマイズプラグイン v1.1.0","parameters":{"windowVisibilityList":"[\"{\\\"windowName\\\":\\\"Window_ItemCategory\\\",\\\"switchId\\\":\\\"0\\\",\\\"scriptCondition\\\":\\\"$gameMap.isEventRunning() || $gameTroop.isEventRunning()\\\"}\"]"}}
 ];
