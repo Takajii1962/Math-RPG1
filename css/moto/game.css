@@ -1,6 +1,4 @@
-body, button, input, select, textarea {
-    font-family: 'GameFont', sans-serif !important;
-}body {
+body {
     -moz-user-select: none;
     -webkit-user-select: none;
     -ms-user-select: none;

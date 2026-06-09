@@ -4,6 +4,7 @@ var $plugins =
 [
 {"name":"PluginCommonBase","status":true,"description":"パラメータ解析を提供する共通基盤です","parameters":{}},
 {"name":"DTextPicture","status":true,"description":"動的文字列ピクチャ生成プラグイン","parameters":{"frameWindowSkin":"","frameWindowPadding":"18","padCharacter":"0","prefixText":"","widthVariable":"0","heightVariable":"0","betweenVariableId":"0"}},
+{"name":"DTextPictureRoot","status":false,"description":"DTextPicture Root Extension","parameters":{}},
 {"name":"PictureCallCommon","status":true,"description":"ピクチャのボタン化プラグイン","parameters":{"PictureIdVariable":"0","InvalidSwitchId":"0","FlickDistance":"60","FlickTimeVariable":"0","FlickDegreeVariable":"0"}},
 {"name":"PlayMsgWndCharSeMZ","status":true,"description":"[Ver1.1.0]メッセージウィンドウで文字ごとにSEを演奏します。","parameters":{"default SE":"1","battle default SE":"0","interval":"2","name1":"Cursor1","volume1":"90","pitch1":"100","name2":"Cursor2","volume2":"90","pitch2":"125","name3":"","volume3":"90","pitch3":"100","name4":"","volume4":"90","pitch4":"100","name5":"","volume5":"90","pitch5":"100","advanced":"","prefix":"SE"}},
 {"name":"VirtualButtonCommand","status":true,"description":"仮想ボタンコマンドプラグイン","parameters":{}},
@@ -20,5 +21,7 @@ var $plugins =
 {"name":"TextPicture","status":true,"description":"テキストをピクチャとして表示します。","parameters":{}},
 {"name":"OnlyAtkDef","status":true,"description":"ステータス画面の能力値を攻撃力と防御力のみにします","parameters":{}},
 {"name":"FixOnlyItem","status":false,"description":"アイテム画面で武器・防具・大事なものの選択を消し、アイテムのみにします。","parameters":{}},
-{"name":"SceneCustomizer","status":false,"description":"シーンカスタマイズプラグイン v1.1.0","parameters":{"windowVisibilityList":"[\"{\\\"windowName\\\":\\\"Window_ItemCategory\\\",\\\"switchId\\\":\\\"0\\\",\\\"scriptCondition\\\":\\\"$gameMap.isEventRunning() || $gameTroop.isEventRunning()\\\"}\"]"}}
+{"name":"SceneCustomizer","status":false,"description":"シーンカスタマイズプラグイン v1.1.0","parameters":{"windowVisibilityList":"[\"{\\\"windowName\\\":\\\"Window_ItemCategory\\\",\\\"switchId\\\":\\\"0\\\",\\\"scriptCondition\\\":\\\"$gameMap.isEventRunning() || $gameTroop.isEventRunning()\\\"}\"]"}},
+{"name":"RootText","status":false,"description":"Root Text for DTextPicture","parameters":{}},
+{"name":"MPP_MessageEX","status":false,"description":"文章表示の機能を拡張したり表示の演出を追加します。","parameters":{"Text Set":"[]","Wait Effects":"{\"Scroll Map\":\"true\",\"Set Movement Route\":\"true\",\"Show Animation\":\"true\",\"Show Balloon Icon\":\"true\",\"Move Picture\":\"true\",\"Tint Picture\":\"true\",\"Tint Screen\":\"true\",\"Flash Screen\":\"true\",\"Shake Screen\":\"false\",\"Set Weather Effect\":\"false\",\"Fadeout BGM\":\"false\",\"Fadeout BGS\":\"false\",\"Play ME\":\"false\"}","Skip Effects":"{\"Scroll Map\":\"true\",\"Set Movement Route\":\"true\",\"Move Picture\":\"true\",\"Tint Picture\":\"true\",\"Tint Screen\":\"false\",\"Flash Screen\":\"false\",\"Shake Screen\":\"false\",\"Set Weather Effect\":\"false\"}","Skip Effects Timing":"skip","Ruby Font Size":"14","Ruby Oy":"0","Ruby Outline Width":"2","Always Leave Ruby Height":"false","Default":"{\"Anime Type\":\"1\",\"Message Row\":\"4\",\"FadeOut Type\":\"0\",\"Text Speed\":\"60\",\"Outline Color\":\"0,0,0,0.5\",\"Outline Width\":\"4\",\"Ruby Color\":\"255,255,255\"}"}}
 ];
